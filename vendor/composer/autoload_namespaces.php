@@ -34,6 +34,7 @@ return array(
     'Mustache' => array($vendorDir . '/mustache/mustache/src'),
     'Math' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'LazyMap\\' => array($vendorDir . '/ocramius/lazy-map/src'),
+    'Laracasts\\Validation' => array($vendorDir . '/laracasts/validation/src'),
     'Laracasts\\TestDummy' => array($vendorDir . '/laracasts/testdummy/src'),
     'Laracasts\\Commander' => array($vendorDir . '/laracasts/commander/src'),
     'Jeremeamia\\SuperClosure' => array($vendorDir . '/jeremeamia/SuperClosure/src'),

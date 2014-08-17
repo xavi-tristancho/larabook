@@ -2,41 +2,49 @@
 
 @section('content')
 
-    <h1>Register!</h1>
+<div class="row">
+    <div class="col-md-6">
 
-    {{ Form::open(['route' => 'register_path']) }}
+        <h1>Register!</h1>
 
-        <div class="form-group">
+        @include('layouts.partials.errors')
 
-            {{ Form::label('username' , 'Username:') }}
-            {{ Form::text('username' , null , ['class' => 'form-control']) }}
+        {{ Form::open(['route' => 'register_path']) }}
 
-        </div>
+            <div class="form-group">
 
-        <div class="form-group">
+                {{ Form::label('username' , 'Username:') }}
+                {{ Form::text('username' , null , ['class' => 'form-control']) }}
 
-            {{ Form::label('email' , 'Email:') }}
-            {{ Form::text('email' , null , ['class' => 'form-control']) }}
+            </div>
 
-        </div>
+            <div class="form-group">
 
-        <div class="form-group">
+                {{ Form::label('email' , 'Email:') }}
+                {{ Form::text('email' , null , ['class' => 'form-control']) }}
 
-            {{ Form::label('password' , 'Password:') }}
-            {{ Form::text('password' , null , ['class' => 'form-control']) }}
+            </div>
 
-        </div>
+            <div class="form-group">
 
-        <div class="form-group">
+                {{ Form::label('password' , 'Password:') }}
+                {{ Form::password('password' , ['class' => 'form-control']) }}
 
-            {{ Form::label('password_confirmation' , 'Password Confirmation:') }}
-            {{ Form::text('password_confirmation' , null , ['class' => 'form-control']) }}
+            </div>
 
-        </div>
+            <div class="form-group">
 
-        <div class="form-group">
-            {{ Form::submit('Sign Up!' , ['class' => 'btn btn-primary']) }}
-        </div>
+                {{ Form::label('password_confirmation' , 'Password Confirmation:') }}
+                {{ Form::password('password_confirmation' , ['class' => 'form-control']) }}
 
-    {{ Form::close() }}
+            </div>
+
+            <div class="form-group">
+                {{ Form::submit('Sign Up!' , ['class' => 'btn btn-primary']) }}
+            </div>
+
+        {{ Form::close() }}
+    </div>
+</div>
 @stop
+
