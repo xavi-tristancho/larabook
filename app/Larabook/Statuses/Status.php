@@ -2,10 +2,11 @@
 
 use Larabook\Statuses\Events\StatusWasPublished;
 use Laracasts\Commander\Events\EventGenerator;
+use Laracasts\Presenter\PresentableTrait;
 
 class Status extends \Eloquent{
 
-    use EventGenerator;
+    use EventGenerator, PresentableTrait;
 
     /**
      * Fillable fields for new status
@@ -13,6 +14,13 @@ class Status extends \Eloquent{
      * @var array
      */
     protected $fillable = ['body'];
+
+    /**
+     * Path to the presenter for a Status
+     *
+     * @var string
+     */
+    protected $presenter = 'Larabook\Statuses\StatusPresenter';
 
     /**
      * Publish a new status
@@ -36,6 +44,6 @@ class Status extends \Eloquent{
      */
     public function user()
     {
-        return $this->belognsTo('Larabook\Users\User');
+        return $this->belongsTo('Larabook\Users\User');
     }
 }

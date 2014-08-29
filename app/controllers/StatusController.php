@@ -30,7 +30,7 @@ class StatusController extends \BaseController {
 	{
         $statuses = $this->statusRepository->getAllForUser(Auth::user());
 
-		return View::make('status.index', compact('statuses'));
+		return View::make('statuses.index', compact('statuses'));
 	}
 
 	/**
