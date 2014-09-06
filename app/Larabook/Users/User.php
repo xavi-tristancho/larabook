@@ -81,4 +81,22 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
         return $this->username == $user->username;
     }
+
+    public function follows(){
+
+        return $this->belongsToMany(self::class, 'follows', 'follower_id', 'followed_id')->withTimestamps();
+    }
+
+    /**
+     * Determine if user follows otheruser
+     *
+     * @param User $otherUser
+     * @return bool
+     */
+    public function isFollowedBy(User $otherUser)
+    {
+        $idsWhoOtherUserFollows = $otherUser->follows()->lists('followed_id');
+
+        return in_array($this->id, $idsWhoOtherUserFollows);
+    }
 }
