@@ -6,7 +6,7 @@
 
             @include('statuses.partials.publish-status-form')
 
-            @include('statuses.partials.statuses', ['statuses' => $user->statuses])
+            @include('statuses.partials.statuses', ['statuses' => $statuses])
         </div>
     </div>
 

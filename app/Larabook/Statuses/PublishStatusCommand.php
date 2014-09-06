@@ -11,6 +11,4 @@ class PublishStatusCommand {
         $this->body = $body;
         $this->userId = $userId;
     }
-
-
 }

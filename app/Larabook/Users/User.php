@@ -75,7 +75,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $this->hasMany('Larabook\Statuses\Status');
     }
 
-    public function is(User $user){
+    public function is($user){
+
+        if(is_null($user)) return false;
+
         return $this->username == $user->username;
     }
 }
